@@ -1,0 +1,55 @@
+package chap03_searc;
+
+import java.util.Scanner;
+
+public class SearchEx03 {
+	
+//p 117 , ?—°?Šµë¬¸ì œ 03 ?š”?†Ÿ?ˆ˜ n?¸ ë°°ì—´ a?—?„œ key?? ?¼ì¹˜í•˜?Š” ëª¨ë“  ?š”?†Œ?˜ ?¸?±?Š¤ë¥? 
+//	ë°°ì—´ idx ?˜ ë§? ?•ë¶??„° ?ˆœ?„œ??ë¡? ???¥, ?¼ì¹˜í•œ ?š”?†Ÿ?ˆ˜ë¥? ë°˜í™˜?•˜?Š” ë©”ì„£?Š ?‘?„±?•˜ê¸?
+	
+	static int searchIdx(int[]a , int n, int key, int[] idx) {
+		
+		int count = 0;
+		
+		for(int i = 0; i < n; i++)
+			
+			if(a[i] == key) 
+				idx[count++] = i;
+		
+		return count; 
+	}
+	
+
+	public static void main(String[]args) { 
+		
+		
+		Scanner sc  = new Scanner(System.in); 
+		
+		System.out.println("ë°°ì—´ x ê¸¸ì´ë¥? ? •?•´ë³´ì†Œ");
+		int num = sc.nextInt(); 
+		
+		int []x = new int[num];
+		int []y = new int[num];
+		
+		System.out.println("ë°°ì—´ ?†?„ ì±„ìš°?„¸?š”");
+		for(int i = 0; i < num; i++) {
+			x[i] = sc.nextInt(); 
+		}
+		
+		System.out.println("?–´?–¤ ?ˆ«?ë¥? ì°¾ê³ ?‹¶??ê°??š”?");
+		int key = sc.nextInt();
+		
+		int cnt = searchIdx(x, num, key, y);
+		
+		if(cnt == 0)
+			System.out.println("?š”?†Ÿê°’ì´ ?—†?Šµ?‹ˆ?‹¤.");
+		else			
+			for(int i = 0 ; i < cnt ; i++) { 
+			System.out.println("?š”?†Ÿê°? ?…‹?…‹?…?…‹  : " +  y[i] );
+			} 
+		}
+	
+	
+}
+
+

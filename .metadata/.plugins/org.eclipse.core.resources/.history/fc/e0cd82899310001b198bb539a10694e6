@@ -1,0 +1,53 @@
+package chap03_searc;
+import java.util.Scanner;
+// ?„ ?˜• ê²??ƒ‰ (ê²??ƒ‰ê³¼ì •?„ ??„¸?ˆ ?‚˜???ƒ„)
+
+class SeqSearchEx_03_02 {
+	// ë°°ì—´ a?˜ ?•ìª? nê°? ?š”?†Œ?—?„œ key?? ê°™ì? ?š”?†Œë¥? ?„ ?˜• ê²??ƒ‰ (ë³´ì´ˆë²?)
+	static int seqSearchEx(int[] a, int n, int key) {
+		System.out.print("   |");
+		for (int k = 0; k < n; k++)
+			System.out.printf("%4d", k);
+		System.out.println();
+
+		System.out.print("---+");
+		for (int k = 0; k < 4 * n + 2; k++)
+			System.out.print("-");
+		System.out.println();
+
+		for (int i = 0; i < n; i++) {
+			System.out.print("   |");
+			System.out.printf(String.format("%%%ds*\n", (i * 4) + 3), "");
+			System.out.printf("%3d|", i);
+			for (int k = 0; k < n; k++)
+				System.out.printf("%4d", a[k]);
+			System.out.println("\n   |");
+			if (a[i] == key)
+				return i; // ê²??ƒ‰?„±ê³?
+		}
+		return -1; // ê²??ƒ‰?‹¤?Œ¨
+	}
+
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+
+		System.out.print("?š”?†Ÿ?ˆ˜ï¼?");
+		int num = stdIn.nextInt();
+		int[] x = new int[num]; // ?š”?†Ÿ?ˆ˜ num?¸ ë°°ì—´
+
+		for (int i = 0; i < num; i++) {
+			System.out.print("x[" + i + "]ï¼?");
+			x[i] = stdIn.nextInt();
+		}
+
+		System.out.print("ì°¾ëŠ” ê°’ï¼š"); // ?‚¤ ê°’ì„ ?…? ¥ ë°›ìŒ
+		int ky = stdIn.nextInt();
+
+		int idx = seqSearchEx(x, num, ky); // ë°°ì—´ x?—?„œ ê°’ì´ ky?¸ ?š”?†Œë¥? ê²??ƒ‰
+
+		if (idx == -1)
+			System.out.println("ê·? ê°’ì˜ ?š”?†Œê°? ?—†?Šµ?‹ˆ?‹¤.");
+		else
+			System.out.println(ky + "?? " + "x[" + idx + "]?— ?ˆ?Šµ?‹ˆ?‹¤.");
+	}
+}

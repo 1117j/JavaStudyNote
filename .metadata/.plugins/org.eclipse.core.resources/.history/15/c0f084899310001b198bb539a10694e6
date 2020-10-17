@@ -1,0 +1,49 @@
+package chap03_searc;
+
+import java.util.Scanner;
+
+//p 115 , ?—°?Šµë¬¸ì œ 01 
+public class SeqSearchEx01 {
+	// ?„ ?˜•ê²??ƒ‰ ë³´ì´ˆë²? 
+	 // while ë£¨í”„ë¥? forë¡? ë³?ê²½í•˜ê¸?
+	static int SeqSearchfor(int a[], int n, int key) { 
+		
+	
+		for(int i = 0; i < n ; i++)
+			if(a[i] == key) 
+				return key;
+			return -1; 
+	}
+	
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("?ž…? ¥?•˜?„¸?š”. ?š”?†Œê°œìˆ˜ë¥?");
+		int num = sc.nextInt(); 
+		
+		int x[] = new int[num+1];
+		
+		
+		for(int i = 0 ; i < num ; i++) { 
+			System.out.println("?ž…? ¥?•˜?‹œ?˜¤. ?š”?†Œë¥?");
+			x[i] = sc.nextInt(); 
+		}
+		
+		System.out.println("ì°¾ê³ ?‹¶?? ê°’ì„ ?ž…? ¥?•´");
+		int key = sc.nextInt();
+		
+		x[num] = key;
+		
+		int idx = SeqSearchfor(x, num, key);
+
+		if (idx == -1) {
+			System.out.println("ì°¾ëŠ”ê°’ì? ?—†?‹¤?„¤");
+		} else 
+			System.out.println("ì°¾ëŠ”ê°’ì? "  + (idx+1) + "ë²ˆì§¸ ?ˆ«?ž?¼?„¤");
+		
+		
+	}
+
+}

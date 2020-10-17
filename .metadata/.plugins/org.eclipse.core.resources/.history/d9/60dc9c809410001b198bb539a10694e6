@@ -1,0 +1,97 @@
+package chap03_search;
+
+import java.util.Scanner;
+
+//p117 ?—°?Šµë¬¸ì œ 04 : ?´ì§? ê²??ƒ‰?˜ ê³¼ì •?„ ??„¸?ˆ ì¶œë ¥?•˜?Š” ?”„ë¡œê·¸?¨ ?‘?„±?•˜ê¸?
+public class SearchEx04 {
+
+	static int binSearch(int a[], int n, int key) {
+
+		int l = 0;
+		int r = n - 1;
+
+		do {
+			int c = (l + r) / 2;
+
+			if (a[c] == key)
+				return c;
+			else if (a[c] < key)
+
+				l = c + 1;
+
+			else
+				r = c - 1;
+
+		} while (l <= r);
+
+		return -1;
+
+	}
+
+	// ?•´?‹µì§?
+	static int binSearchEx(int[] a, int n, int key) {
+		System.out.print("   |");
+		for (int k = 0; k < n; k++)
+			System.out.printf("%4d", k);
+		System.out.println();
+
+		System.out.print("---+");
+		for (int k = 0; k < 4 * n + 2; k++)
+			System.out.print("-");
+		System.out.println();
+
+		int pl = 0; // ê²??ƒ‰ë²”ìœ„ ë§? ?•?˜ index
+		int pr = n - 1; // ê²??ƒ‰ë²”ìœ„ ë§? ?’¤?˜ index
+
+		do {
+			int pc = (pl + pr) / 2; // ì¤‘ì•™?š”?†Œ?˜ index
+			System.out.print("   |");
+			if (pl != pc)
+				System.out.printf(String.format("%%%ds<-%%%ds+", (pl * 4) + 1, (pc - pl) * 4), "", "");
+			else
+				System.out.printf(String.format("%%%ds<-+", pc * 4 + 1), "");
+			if (pc != pr)
+				System.out.printf(String.format("%%%ds->\n", (pr - pc) * 4 - 2), "");
+			else
+				System.out.println("->");
+			System.out.printf("%3d|", pc);
+			for (int k = 0; k < n; k++)
+				System.out.printf("%4d", a[k]);
+			System.out.println("\n   |");
+			if (a[pc] == key)
+				return pc; // ê²??ƒ‰?„±ê³?
+			else if (a[pc] < key)
+				pl = pc + 1; // ê²??ƒ‰ë²”ìœ„ë¥? ?’¤ìª? ? ˆë°˜ìœ¼ë¡? ì¢í˜
+			else
+				pr = pc - 1; // ê²??ƒ‰ë²”ìœ„ë¥? ?•ìª? ? ˆë°˜ìœ¼ë¡? ì¢í˜
+		} while (pl <= pr);
+		return -1; // ê²??ƒ‰?‹¤?Œ¨
+	}
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("?…? ¥?•˜?¼ ?š”?†Œê°œìˆ˜ë¥?");
+		int num = sc.nextInt();
+
+		int x[] = new int[num];
+
+		for (int i = 0; i < num; i++) {
+			System.out.println("?…? ¥?•˜?¼ ?š”?†Œë¥?");
+			x[i] = sc.nextInt();
+		}
+
+		System.out.println("ì°¾ê³ ?‹¶?? ê°’ì„ ?…? ¥?•˜?¼");
+
+		int key = sc.nextInt();
+
+		int idx = binSearch(x, num, key);
+
+		if (idx == -1)
+			System.out.println("ì°¾ê³ ? ?•˜?Š” ê°’ì? ?—†?‹¤.");
+		else
+			System.out.println("ì°¾ê³ ? ?•˜?Š” ê°’ì? " + idx + "?— ?ˆ?‹¤ ");
+
+	}
+}
