@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+C:\Users\HP DEMO HUB\Documents\GitHub\JavaStudyNote\.metadata\.plugins\org.eclipse.jdt.core
+3555538023.index
+4093086362.index
+2270498823.index
+3353274776.index
