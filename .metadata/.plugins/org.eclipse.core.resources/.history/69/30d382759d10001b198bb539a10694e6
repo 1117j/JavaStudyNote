@@ -1,0 +1,10 @@
+package studyNote;
+
+public class GenericClassTest {
+	//제네릭 클래스 연습
+
+	public static void main(String[] args) {
+
+	}
+
+}

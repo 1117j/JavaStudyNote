@@ -1,0 +1,13 @@
+package chap04_stack;
+
+public class QueueEx05 {
+	
+	int search(int x) {
+
+		for (int i = x - 1; i >= 0; i--) // 정상 쪽에서 선형 검색
+			if (stk[i] == x)
+				return i; // 검색 성공
+		return -1; // 검색 실패
+	}
+
+}

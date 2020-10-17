@@ -1,0 +1,9 @@
+package studyNote;
+
+public class GenericClassTest {
+
+	public static void main(String[] args) {
+
+	}
+
+}

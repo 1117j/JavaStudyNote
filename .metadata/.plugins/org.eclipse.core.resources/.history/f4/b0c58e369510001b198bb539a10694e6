@@ -1,0 +1,54 @@
+package studyNote;
+
+import java.util.Scanner;
+
+public class SentrySearch {
+	
+	//ë³´ì´ˆë²?(sentinel method)?„ ?‚¬?š©?•œ ê²??ƒ‰ 
+	
+	//ì¢…ë£Œì¡°ê±´ 1: ê²??ƒ‰?•  ê°’ì„ ë°œê²¬?•˜ì§? ëª»í•˜ê³? ë°°ì—´?˜ ??„ ì§??‚˜ê°? ê²½ìš° 
+	//ì¢…ë£Œì¡°ê±´ 2: ê²??ƒ‰?•  ê°’ê³¼ ê°™ì? ?š”?†Œë¥? ë°œê²¬?•œ ê²½ìš° 
+	
+	static int senSearch(int[]a , int n, int key) {
+		//?š”?†Œ?ˆ˜ n?¸ ë°°ì—´  a?— key?? ê°™ì? ?š”?†Œë¥? ë³´ì´ˆë²•ìœ¼ë¡? ?„ ?˜•ê²??ƒ‰?•˜ê¸?
+		int i = 0; 
+		a[n] = key; //ë³´ì´ˆ ì¶”ê??•˜ê¸?
+		
+		while(true) {
+			if(a[i]==key) {
+				break; 
+			}
+			i++; 
+		}
+		return i == n ? -1 : i;
+	}
+	
+	public static void main(String[]args) {
+		
+		Scanner sc = new Scanner(System.in); 
+		
+		int num = sc.nextInt();
+		 
+		int[] x = new int[num + 1]; //?š”?†Ÿ?ˆ˜ num + 1
+		
+		for(int i = 0; i < num; i++) {
+			System.out.println("?š”?†Œ ?…? ¥?•˜?„¸?š”");
+			x[i] = sc.nextInt();
+		}
+		
+		System.out.println("ê²??ƒ‰?•  ê°’ì„ ?…? ¥?•˜?„¸?š”. ");
+		
+		int key = sc.nextInt();
+		
+		int idx = senSearch(x, num, key);
+		
+		if(idx == -1)
+			System.out.println("ê·? ê°’ì˜ ?š”?†Œê°? ?—†?Šµ?‹ˆ?‹¤.");
+		else
+			System.out.println(key + "ê°’ì? " + idx + " ë²ˆì§¸?— ?ˆ?Š¤ë¬´ë‹ˆ?‹¤.");
+		
+		
+		
+	}
+	
+}

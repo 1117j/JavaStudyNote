@@ -1,0 +1,23 @@
+package studyNote;
+
+//신체 검사 데이터 배열에서 이진 검색하기
+public class PhysExamSearch {
+	
+	//1. 신검 데이터 정의
+	static class PhyscData{ 
+		private String name;
+		private int height;
+		private double vision; 
+		
+		
+	}
+		
+	
+	
+	
+
+	public static void main(String[] args) {
+
+	}
+
+}

@@ -1,0 +1,66 @@
+package studyNote;
+
+import java.util.Scanner;
+
+public class BinarySearch {
+
+	// ?´ì§? ê²??ƒ‰ë²? : sort?œ ë°°ì—´?—?„œ ê²??ƒ‰?•˜?Š” ?•Œê³ ë¦¬ì¦?
+
+	// ?´ì§? ê²??ƒ‰ë²? ?¥? : ?„ ?˜• ê²??ƒ‰ë³´ë‹¤ ì¢? ?” ë¹ ë¥´ê²? ê²??ƒ‰?´ ê°??Š¥
+	// ? „? œì¡°ê±´ : ?°?´?„°ê°? ?‚¤ ê°’ìœ¼ë¡? ?´ë¯? ? •? ¬?˜?–´ ?ˆ?Œ
+
+	static int binSearch(int[] a, int n, int key) {
+
+		int l = 0; // ê²??ƒ‰ ì²? ?¸?±?Š¤
+		int r = n - 1; // ê²??ƒ‰ ë§ˆì?ë§? ?¸?±?Š¤
+
+		do {
+			int c = (l + r) / 2; // ì¤‘ì•™?š”?†Œ ?¸?±?Š¤
+			if (a[c] == key)
+				return c;
+
+			else if (a[c] < key)
+				l = c + 1; // ê²??ƒ‰ ë²”ìœ„ ?‹œ?‘?¸?±?Š¤ë¥? cë¡? ?˜®ê²? ë°˜ìœ¼ë¡? ì¤„ì´ê¸?
+
+			else
+				r = c - 1; // ê²??ƒ‰ ë²”ìœ„ ë§ˆì?ë§? ?¸?±?Š¤ë¥? cë¡? ?˜®ê²? ë°˜ìœ¼ë¡? ì¤„ì´ê¸?
+
+		} while (l <= r);
+
+		return -1; // ê²??ƒ‰ ?‹¤?Œ¨?‹œ -1 ë¦¬í„´
+
+	}
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("ë°°ì—´ ê¸¸ì´");
+
+		int num = sc.nextInt();
+		int[] x = new int[num];
+
+		System.out.println("?˜¤ë¦„ì°¨?ˆœ?œ¼ë¡? ?…? ¥?•˜?‹œ?˜¤");
+		
+		System.out.println("ì²«ë²ˆì§? ?š”?†Œë¥? ?…? ¥?•˜?„¸?š”");
+		x[0] = sc.nextInt(); 
+
+		for (int i = 1; i < num; i++) {
+			do {
+				x[i] = sc.nextInt();
+			} while (x[i] < x[i - 1]); // ?• ?š”?†Œë³´ë‹¤ ?‘?œ¼ë©? ?‹¤?‹œ ?…? ¥
+		}
+
+		System.out.println("ì°¾ì„ ê°’ì„ ?…? ¥?•˜?„¸?š”");
+		int key = sc.nextInt();
+
+		int idx = binSearch(x, num, key);
+
+		if (idx == -1)
+			System.out.println("ì°¾ëŠ”ê°’ì´ ?—†?Šµ?‹ˆ?‹¤.");
+
+		else
+			System.out.println("ì°¾ëŠ” ê°’ì? " + (idx + 1) + "ë²? ì§¸ì— ?ˆ?Šµ?‹ˆ?‹¤.");
+	}
+
+}

@@ -1,4 +1,4 @@
-package studynote;
+package studyNote;
 
 import java.util.Arrays;
 
@@ -12,7 +12,7 @@ public class Arrays_BinSearch {
 		
 		
 		if(Arrays.binarySearch(x, key) < 0)
-			System.out.println("찾는 값이 없어요.");
+			System.out.println("찾는 값이 ?��?��?��.");
 		else
 		System.out.println(Arrays.binarySearch(x, key));
 		

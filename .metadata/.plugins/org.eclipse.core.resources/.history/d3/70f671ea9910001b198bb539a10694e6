@@ -1,0 +1,7 @@
+package studyNote;
+
+class A implements Comparable<A>{
+	
+	
+
+}

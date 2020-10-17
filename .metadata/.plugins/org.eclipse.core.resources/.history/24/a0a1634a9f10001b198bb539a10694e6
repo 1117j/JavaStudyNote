@@ -1,0 +1,10 @@
+package studyNote_04;
+
+// 136p
+public class IntStack {
+	private int max; 	// 스택 용량 	
+	private int ptr; 	// 스택 포인터 
+	private int[] stk; 	// 스택 본체
+	
+
+}

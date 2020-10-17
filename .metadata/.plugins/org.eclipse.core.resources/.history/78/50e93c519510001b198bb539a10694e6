@@ -1,0 +1,23 @@
+package studyNote1;
+
+public class StaticEx {
+	
+	static int a = 0;  //Ŭ���� �ʵ�
+	
+	int b = 0; //�ν��Ͻ� �ʵ�
+	
+	
+
+	public static void main(String[] args) {
+	
+		StaticEx ex01 = new StaticEx(); // ù��°
+		StaticEx ex02 = new StaticEx(); // �ι�°
+		
+		ex01.a++; //Ŭ���� �ʵ� a�� 1 ������Ŵ
+		ex01.b++; //�ν��Ͻ� �ʵ� b�� 1 ������Ŵ
+		
+		System.out.println(ex02.a); // �ι�° ex02�� Ŭ���� �ʵ� ���
+		System.out.println(ex02.b); // �ι�° ex02�� �ν��Ͻ� �ʵ� ���
+	}
+
+}

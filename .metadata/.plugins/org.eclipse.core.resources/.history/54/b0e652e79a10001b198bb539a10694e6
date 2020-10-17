@@ -1,0 +1,11 @@
+package studyNote;
+
+//신체 검사 데이터 배열에서 이진 검색하기
+public class PhysExamSearch {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,54 @@
+package studyNote;
+
+import java.util.Scanner;
+
+public class SentrySearch {
+	
+	//보초법(sentinel method)을 사용한 검색 
+	
+	//종료조건 1: 검색할 값을 발견하지 못하고 배열의 끝을 지나간 경우 
+	//종료조건 2: 검색할 값과 같은 요소를 발견한 경우 
+	
+	static int senSearch(int[]a , int n, int key) {
+		//요소수 n인 배열  a에 key와 같은 요소를 보초법으로 선형검색하기
+		int i = 0; 
+		a[n] = key; //보초 추가하기
+		
+		while(true) {
+			if(a[i]==key) {
+				break; 
+			}
+			i++; 
+		}
+		return i == n ? -1 : i;
+	}
+	
+	public static void main(String[]args) {
+		
+		Scanner sc = new Scanner(System.in); 
+		
+		int num = sc.nextInt();
+		 
+		int[] x = new int[num + 1]; //요솟수 num + 1
+		
+		for(int i = 0; i < num; i++) {
+			System.out.println("요소 입력하세요");
+			x[i] = sc.nextInt();
+		}
+		
+		System.out.println("검색할 값을 입력하세요. ");
+		
+		int key = sc.nextInt();
+		
+		int idx = senSearch(x, num, key);
+		
+		if(idx == -1)
+			System.out.println("그 값의 요소가 없습니다.");
+		else
+			System.out.println(key + "값은 " + idx + " 번째에 있스무니다.");
+		
+		
+		
+	}
+	
+}

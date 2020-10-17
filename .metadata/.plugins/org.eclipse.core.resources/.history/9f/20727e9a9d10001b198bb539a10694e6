@@ -1,0 +1,20 @@
+package studyNote;
+
+public class GenericClassTest {
+	//제네릭 클래스 연습
+
+	//제네릭 클래스의 파리미터를 T라고 작성
+	static class GenericClass<T>{
+		private T xyz; 
+		
+		GenericClass(T t) {
+		}
+		
+	}
+	
+	
+	public static void main(String[] args) {
+
+	}
+
+}
