@@ -9,7 +9,8 @@ public class StackEx01 {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
-
+		
+		
 		IntStack s = new IntStack(64); // 최대 64개를 푸쉬할 수 있는 스택
 
 		while (true) {
@@ -25,7 +26,7 @@ public class StackEx01 {
 			System.out.println("9. 스택 empty 여부");
 			System.out.println("10. 스택 full 여부");
 			System.out.println("0. 종료 ");
-
+			
 			int menu = sc.nextInt();
 			if (menu == 0) {
 				System.out.println("프로그램이 종료됩니다.");

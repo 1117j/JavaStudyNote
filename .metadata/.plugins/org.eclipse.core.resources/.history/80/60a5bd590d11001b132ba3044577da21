@@ -1,0 +1,17 @@
+package studyNote;
+
+public class Test {
+	public static void main(String[] args) {
+		
+		Fruit f;
+		
+		
+		
+		
+		
+		
+//		for (Fruit f : Fruit.values()) {
+//			System.out.println(f + ", " + f.getColor());
+//		}
+	}
+}

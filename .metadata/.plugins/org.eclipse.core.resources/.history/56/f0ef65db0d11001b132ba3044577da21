@@ -1,0 +1,19 @@
+package studyNote;
+
+public class Test {
+	public static void main(String[] args) {
+		
+		Fruit f;
+		
+		//f = Fruit.APPLE;
+		System.out.println(f.ordinal());
+		
+		
+		
+		
+		
+//		for (Fruit f : Fruit.values()) {
+//			System.out.println(f + ", " + f.getColor());
+//		}
+	}
+}

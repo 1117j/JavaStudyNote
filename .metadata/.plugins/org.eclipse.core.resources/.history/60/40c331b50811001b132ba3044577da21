@@ -1,0 +1,7 @@
+package studyNote;
+
+interface Test {
+	
+	final int A = 1;
+
+}

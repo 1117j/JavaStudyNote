@@ -1,0 +1,15 @@
+package studyNote;
+
+public class Test {
+	
+	enum test{
+		chocolate, banana, icecream; 
+	
+
+	}
+	
+	
+	
+	
+	
+}
